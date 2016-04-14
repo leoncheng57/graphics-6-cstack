@@ -81,6 +81,7 @@ void parse_file ( char * filename,
   char line[256];
   struct matrix * tmp;
   double angle;
+  struct stack * stk = new_stack();
   color g;
 
   g.red = 0;
@@ -166,7 +167,8 @@ void parse_file ( char * filename,
       sscanf(line, "%lf %lf %lf", &x, &y, &z);
       tmp = make_translate(x, y, z);
       matrix_mult(tmp, transform);
-      //print_matrix(transform);
+      //print_matrix(transform);		
+      
     }
     else if ( strncmp(line, "xrotate", strlen(line)) == 0 ) {
       //printf("ROTATE!\n");
