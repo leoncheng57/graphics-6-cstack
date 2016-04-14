@@ -168,7 +168,7 @@ void parse_file ( char * filename,
       tmp = make_translate(x, y, z);
       matrix_mult(tmp, transform);
       //print_matrix(transform);		
-      
+      matrix_mult(stk->data[stk->top], transform);
     }
     else if ( strncmp(line, "xrotate", strlen(line)) == 0 ) {
       //printf("ROTATE!\n");
@@ -193,6 +193,14 @@ void parse_file ( char * filename,
       angle = angle * (M_PI / 180);
       tmp = make_rotZ( angle);
       matrix_mult(tmp, transform);
+    }
+    else if ( strncmp(line, "push", strlen(line)) == 0 ) {
+      fgets(line, 255, f);
+      push(stk);
+    }
+    else if ( strncmp(line, "pop", strlen(line)) == 0 ) {
+      fgets(line, 255, f);
+      pop(stk);
     }
     else if ( strncmp(line, "ident", strlen(line)) == 0 ) {
       ident(transform);
