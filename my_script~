@@ -1,0 +1,52 @@
+#head
+push
+translate
+250 250 0
+yrotate
+25
+# sphere
+# 0 0 50
+#paddle 1
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#paddle 2
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#paddle 3
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#paddle 4
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#paddle 5
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#paddle 6
+push
+zrotate
+60
+box
+-50 0 0 50 150 25
+#sphere
+sphere
+0 0 25
+#display and save
+display
+save
+line.png
+quit

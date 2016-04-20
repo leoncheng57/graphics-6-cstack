@@ -18,14 +18,17 @@ dsiplay.o: display.c display.h ml6.h matrix.h
 matrix.o: matrix.c matrix.h
 	$(CC) $(CFLAGS) -c matrix.c
 
-parser.o: parser.c parser.h matrix.h draw.h display.h ml6.h
+parser.o: parser.c parser.h matrix.h draw.h display.h ml6.h stack.h
 	$(CC) $(CFLAGS) -c parser.c
-
-gmath.o: gmath.c gmath.h matrix.h
-	$(CC) $(CFLAGS) -c gmath.c
 
 stack.o: stack.c stack.h matrix.h
 	$(CC) $(CFLAGS) -c stack.c
 
+gmath.o: gmath.c gmath.h matrix.h
+	$(CC) $(CFLAGS) -c gmath.c
+
 clean:
 	rm *.o *~
+
+run:
+	./main my_script
